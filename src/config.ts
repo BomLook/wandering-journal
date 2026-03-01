@@ -14,7 +14,7 @@ export const themeConfig: ThemeConfig = {
     // author name
     author: 'BomLook',
     // site url
-    url: 'https://retypeset.radishzz.cc',
+    url: 'https://www.heavenhold.cn/',
     // base path
     // root directory for all pages and assets
     base: '/', // e.g., '/blog', '/docs'
@@ -167,11 +167,11 @@ export const themeConfig: ThemeConfig = {
       },
       {
         name: 'GitHub',
-        url: 'https://github.com/radishzzz/astro-theme-retypeset',
+        url: 'https://github.com/BomLook',
       },
       {
         name: 'Email',
-        url: 'email@radishzz.cc',
+        url: 'yangrenbing7@gmail.com',
       },
       // {
       //   name: 'X',
