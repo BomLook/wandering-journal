@@ -8,8 +8,8 @@ tags:
 draft: false
 pin: 0
 toc: true
-lang: 'zh'
-abbrlink: ''
+lang: zh
+abbrlink: 'journal-of-cpp'
 ---
 
 学习一下 new 和 delete 关键字如何重载：
