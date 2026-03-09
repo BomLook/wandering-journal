@@ -9,7 +9,7 @@ draft: false
 pin: 0
 toc: true
 lang: zh
-abbrlink: 'journal-of-cpp'
+abbrlink: 'eight-legged-essay-1'
 ---
 
 记录第一篇详细阅读的八股文，看看我能回答上来多少
@@ -56,8 +56,6 @@ abbrlink: 'journal-of-cpp'
 
 
 
-***
-
 # Linux 基础核心
 
 ## 1. 文件和目录操作
@@ -99,7 +97,6 @@ abbrlink: 'journal-of-cpp'
 
 ![image-20260309230058561](https://cdn.jsdelivr.net/gh/BomLook/blog-pic@main/img/image-20260309230058561.png)
 
----
 
 ## 6. 如何结束进程名为 aaa 的进程？ (操作流程题)
 
@@ -146,10 +143,6 @@ kill -9 $(pgrep aaa)
 ![image-20260309230121645](https://cdn.jsdelivr.net/gh/BomLook/blog-pic@main/img/image-20260309230121645.png)
 
 
-
-
-
-***
 
 # 多进程与多线程核心
 
@@ -201,7 +194,6 @@ kill -9 $(pgrep aaa)
     *   **低稳定性**：线程共享资源。一个线程出错（非法内存访问、死锁）可能导致整个进程崩溃。
     *   *例子*：多线程服务器中一个线程崩溃，可能导致整个服务瘫痪。
 
----
 
 ## 二、 什么情况下使用多进程更好？ (场景应用题)
 
@@ -247,7 +239,6 @@ kill -9 $(pgrep aaa)
 *   **MyISAM**：不支持事务、行级锁、外键。优势是占用空间小，适合**大量读操作**场景。
 *   **Memory**：数据存储在**内存**中，速度快，但服务重启数据会丢失。不支持事务。
 
----
 
 ## 二、 InnoDB 核心特性 (重点)和MYISAM
 
@@ -261,7 +252,6 @@ kill -9 $(pgrep aaa)
 2.  **并发性能**：采用**行级锁**，锁粒度小，并发能力强；MyISAM 仅支持表锁。
 3.  **崩溃恢复**：通过 **Redo Log**（重做日志）实现崩溃恢复，保证数据持久性和一致性。
 
----
 
 ## 三、 InnoDB 与 MyISAM 深度区别 (高频考点)
 
@@ -343,7 +333,7 @@ kill -9 $(pgrep aaa)
    *   InnoDB：不保存行数，`count(*)` 需全表扫描，效率低。
    *   MyISAM：内部变量保存行数，`count(*)` 直接读取，效率极高。
 
----
+
 
 ## 四、 MySQL 索引数据结构：B+ 树 (底层原理)
 
@@ -418,7 +408,7 @@ string addstring(string nums1,string nums2)
 }
 ```
 
----
+
 
 ## 二、 二进制中 1 的个数
 

@@ -9,7 +9,7 @@ draft: false
 pin: 0
 toc: true
 lang: zh
-abbrlink: 'journal-of-cpp'
+abbrlink: 'basic-1'
 ---
 
 学习一下 new 和 delete 如何重载：
