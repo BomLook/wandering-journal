@@ -12,7 +12,9 @@ lang: zh
 abbrlink: 'journal-of-cpp'
 ---
 
-学习一下 new 和 delete 关键字如何重载：
+学习一下 new 和 delete 如何重载：
+
+# 重载 operator new
 
 我们在使用 `new` 关键字时，实际上调用的是 `operator new` 来分配空间，更加具体的：实际上是这两个函数：
 
@@ -25,7 +27,7 @@ void *operator new[](size_t);    // allocate an array
 
 我们可以通过重载 `operator new`，实现不同版本的空间分配方式，下面依次给出几个例子：
 
-1. 最简单版本：
+## 1. 最简单版本：
 
    ```cpp
    class Foo {
@@ -53,7 +55,7 @@ void *operator new[](size_t);    // allocate an array
    - 当编译器发现有 `new` 关键字时，就会在现有的类或其基类中寻找 `operator new`，如果没有则在全局中找，如果还是未找到，则使用默认方法。
    - 类中的 `operator new` 默认是 static，所以在类中可加可不加。
 
-2. 加入其他形参：
+## 2. 加入其他形参：
 
    ```cpp
    class Foo {
@@ -77,7 +79,8 @@ void *operator new[](size_t);    // allocate an array
 
     上述 `operator new` 重载接收了额外一个形参，可以发现 `operator new` 的重载自由度是非常大的。
 
-3. `placement new` ：一种 `operator new` 的重载形式，相比较上述的 `operator new` 的主要作用是分配空间和初始化对象，`placement new` 没有分配新的空间，它是利用 `ptr` 的地址初始化对象。由于其不需要频繁地申请和释放旧内存（频繁地申请和释放内存，需要花费时间去查找足够大的剩余空间，同时可能会出现无法分配内存，即内存不足的情况），所以被广泛使用于内存池中。例子如下：
+## 3. `placement new` ：
+一种 `operator new` 的重载形式，相比较上述的 `operator new` 的主要作用是分配空间和初始化对象，`placement new` 没有分配新的空间，它是利用 `ptr` 的地址初始化对象。由于其不需要频繁地申请和释放旧内存（频繁地申请和释放内存，需要花费时间去查找足够大的剩余空间，同时可能会出现无法分配内存，即内存不足的情况），所以被广泛使用于内存池中。例子如下：
 
    ```cpp
    class Foo {
@@ -102,6 +105,8 @@ void *operator new[](size_t);    // allocate an array
 
    这里，`m2` 的初始化是利用 `m` 的内存空间，所以如果 `m` 和 `m2` 实际上指向的是同一块内存，不能重复 `delete`。
 
+
+# 重载 operator delete
 类似的，我们也可以重载 `operator delete`：
 
 ```cpp
